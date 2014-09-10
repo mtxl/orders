@@ -1,0 +1,12 @@
+# encoding: utf-8
+ru:
+  label_orders: Заказы
+  label_order_id: Номер заказа
+  label_order_import: Загрузка заказов
+  label_orders_api_key: Ключ API заказов
+  label_orders_api_path: Путь к API заказов
+  button_create: Сформировать
+  button_import: Загрузить
+
+
+

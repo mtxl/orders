@@ -1,0 +1,6 @@
+<h2><%= l(:label_order_import) %></h2>
+<%= form_tag('/import', method: 'get') do %>
+  <%= label_tag(:order_id, l(:label_order_id)) %>
+  <%= text_field_tag(:order_id) %>
+  <%= submit_tag l(:button_import) %>
+<% end %>
