@@ -3,13 +3,15 @@ class OrderContractsController < ApplicationController
 
   before_filter :find_issue
 
-  def new
-
-  end
-
   def create
-    create_from_template
+    pdf = WickedPdf.new.pdf_from_string render_contract
+    save_contract_as_attachment(pdf)
     redirect_to issue_path(@issue), :notice => "Invoice created!"
+  end
+  
+  def preview
+    @text = render_contract
+    render :partial =>"preview"
   end
 
   private
@@ -20,16 +22,27 @@ class OrderContractsController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     render_404
   end
-  
-  def create_from_template
-    t = Wiki.find_page("Курсы:МИРДО")
-    c = @issue.contacts.first
-    tmpl = Liquid::Template.parse(t.text)
-    tmpl.assigns['contact'] = ContactDrop.new c
-    s = '<meta http-equiv="content-type" content="text/html; charset=utf-8" />'
-    s += Redmine::WikiFormatting.to_html(Setting.text_formatting, tmpl.render)
-    pdf = WickedPdf.new.pdf_from_string(s)
 
+  def contract_page
+    Wiki.find_page("Курсы:Договор_Матрикс-Консалтинг")
+  end
+
+  def contractor
+    @issue.contacts.first
+  end
+  
+  def render_contract
+    s = render_to_string 'base.html.erb', 
+                          :layout => false,
+                          :locals => {:page => contract_page},
+                          :formats => [:html]
+    c = @issue.contacts.first
+    tmpl = Liquid::Template.parse(s)
+    tmpl.assigns['contact'] = ContactDrop.new c
+    tmpl.render
+  end
+
+  def save_contract_as_attachment(pdf)
     current_user = User.current
     fn = "Invoice-#{@issue.id}"
     a = Attachment.create(:file => pdf, :filename => fn,  :author => current_user)

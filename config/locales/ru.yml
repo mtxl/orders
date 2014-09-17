@@ -5,6 +5,7 @@ ru:
   label_order_import: Загрузка заказов
   label_orders_api_key: Ключ API заказов
   label_orders_api_path: Путь к API заказов
+  label_stamp: печать
   button_create: Сформировать
   button_import: Загрузить
 
