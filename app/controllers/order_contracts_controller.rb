@@ -24,7 +24,7 @@ class OrderContractsController < ApplicationController
   end
 
   def contract_page
-    Wiki.find_page("Курсы:Договор_Матрикс-Консалтинг")
+    Wiki.find_page("#{@project.name}:#{params['contract']['institute_id']}")
   end
 
   def contractor
