@@ -3,4 +3,4 @@
 <%= render "header" %>
 <%= textilizable(page, :text, :headings => false) %>
 <%= render "billing_information" %>
-<%= render "common/two_column_sign" %>
+<%= render :partial => "common/two_column_sign", :locals => {:page => page} %>

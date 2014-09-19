@@ -1,8 +1,36 @@
-table td {
+div.two-column-sign {
+ position:relative;
 }
-table {
+div.two-column-sign table {
   width:100%;
+  height:230px;
+  border-collapse:separate;
+  border:none;
 }
-td {
+div.two-column-sign td {
+  padding-left:10px;
+  padding-left:10px;
   width:50%;
+  height:100pt;
+  border:none;
+  font-size: 11px;
+}
+
+div.two-column-sign tr {
+}
+img.stamp {
+  position:absolute;
+  width:150px;
+  height:150px;
+  left:70px;
+  top:70px;
+}
+img.sign{
+  position:absolute;
+  left:40px;
+  top:36px;
+}
+div.sign-line {
+  position:absolute;
+  top:70px;
 }
