@@ -26,6 +26,10 @@ class OrderContractsController < ApplicationController
   def contract_page
     Wiki.find_page("#{@project.name}:#{params['contract']['institute_id']}")
   end
+  
+  def institute
+    Wiki.find_page(@project.name + ":" + @issue.custom_field_value(8))
+  end
 
   def contractor
     @issue.contacts.first
@@ -37,8 +41,10 @@ class OrderContractsController < ApplicationController
                           :locals => {:page => contract_page},
                           :formats => [:html]
     c = @issue.contacts.first
+
     tmpl = Liquid::Template.parse(s)
     tmpl.assigns['contact'] = ContactDrop.new c
+    tmpl.assigns['institute'] = InstituteDrop.new institute
     tmpl.render
   end
 

@@ -1,6 +1,3 @@
-require_dependency 'orders/hooks/views_issues_hook'
-require_dependency 'orders/pathces/issues_helper_patch'
-require_dependency 'orders/wiki_macros/contract_wiki_macros.rb'
 #
 Redmine::Plugin.register :orders do
   name 'Orders plugin'
@@ -14,3 +11,5 @@ Redmine::Plugin.register :orders do
   permission :orders, {:orders => [:get]}, :public => true
   menu :project_menu, :orders, {:controller => 'orders', :action => 'get'}, :caption => :label_orders, :after => :activity,  :param => :project_id
 end
+
+require_dependency 'orders/orders'
