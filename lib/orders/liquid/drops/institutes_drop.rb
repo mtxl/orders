@@ -1,7 +1,6 @@
 class InstituteDrop < Liquid::Drop
   def initialize(institute)
     @institute = institute.class == WikiPage ? YAML.load(institute.text) : {}
-    require 'pry'; binding.pry 
   end
   def name
     @institute["name"]
@@ -45,6 +44,7 @@ class InstituteDrop < Liquid::Drop
   def boss_contract_string
     @institute["boss_contract_string"]
   end
+
   def boss_for_sign
     name = @institute["boss"]
     if name
@@ -54,4 +54,9 @@ class InstituteDrop < Liquid::Drop
       ""
     end
   end
+
+  def legal_postal_address
+    legal_address
+  end
+
 end

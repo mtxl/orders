@@ -26,6 +26,15 @@ class OrderContractsController < ApplicationController
   def contract_page
     Wiki.find_page("#{@project.name}:#{params['contract']['institute_id']}")
   end
+
+  def contract_id
+    if institute.title == "МИРДО"
+      @issue.id.to_s
+    else
+      "###"
+    end
+
+  end
   
   def institute
     Wiki.find_page(@project.name + ":" + @issue.custom_field_value(8))
@@ -45,6 +54,7 @@ class OrderContractsController < ApplicationController
     tmpl = Liquid::Template.parse(s)
     tmpl.assigns['contact'] = ContactDrop.new c
     tmpl.assigns['institute'] = InstituteDrop.new institute
+    tmpl.assigns['contract'] = ContractDrop.new contract_id, contract_page
     tmpl.render
   end
 

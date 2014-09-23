@@ -1,16 +1,19 @@
-<div class=two-column-sign>
+<div class="two-column">
 <table>
-  <tr>
-    <td>
+  <tr class="stamp">
+    <td class="left">
       <div class="sign-line">
-        <%= "_"*25 %>/В.И. Федотов/<br>
+        <%= sign_line do %>
+          {{institute.boss_for_sign}}
+        <% end %><br>
         М.П.
       </div>
       <%= stamp_img_tag page, :sign %>
       <%= stamp_img_tag page, :stamp %>
     </td>
-    <td>      <div class="sign-line">
-        <%= "_"*25 %>/В.И. Федотов/<br>
+    <td class="right">
+      <div class="sign-line">
+        <%= sign_line %><br>
         М.П.
       </div>
     </td>

@@ -1,0 +1,21 @@
+<div class="two-column">
+  <table>
+    <tr>
+      <td class="left head">
+        {{institute.name}}
+      </td>
+      <td class="right head">
+        <%= l(:label_customer)%> <br>
+        {{customer.name}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <% for item in %w(legal_postal_address inn kpp rs bank ks bik) %>
+          <%= account_props(:institute, item) %> <br />
+        <% end %>
+      </td>
+      <td></td>
+    </tr>
+  </table>
+</div>

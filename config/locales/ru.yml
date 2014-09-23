@@ -7,6 +7,20 @@ ru:
   label_orders_api_path: Путь к API заказов
   label_stamp: печать
   label_sign: подпись
+  label_customer: Заказчик
+  label_performer: Исполнитель
+  label_inn: ИНН
+  label_kpp: КПП
+  label_rs: р/с
+  label_bank: Банк
+  label_ks: к/с
+  label_bik: БИК
+  label_phone: телефон
+  label_email: эл.адрес
+  label_postal_address: почтовый адрес
+  label_legal_address: юридический адрес
+  label_legal_postal_address: адрес
+  label_short_year: г.
   button_create: Сформировать
   button_import: Загрузить
 
