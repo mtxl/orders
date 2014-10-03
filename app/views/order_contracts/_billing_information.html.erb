@@ -15,7 +15,11 @@
           <%= account_props(:institute, item) %> <br />
         <% end %>
       </td>
-      <td></td>
+      <td>
+        <% for item in %w(legal_postal_address inn kpp bank) %>
+          <%= account_props(:contractor, item) %> <br />
+        <% end %>
+      </td>
     </tr>
   </table>
 </div>
