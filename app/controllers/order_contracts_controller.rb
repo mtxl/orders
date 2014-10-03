@@ -40,19 +40,28 @@ class OrderContractsController < ApplicationController
     Wiki.find_page(@project.name + ":" + @issue.custom_field_value(8))
   end
 
-  def contractor
-    @issue.contacts.first
+  def order
+    @issue.order_info
   end
-  
+
+  def contractor
+    @issue.order_info['contractor']
+  end
+
+  def product
+    @issue.order_info['product_info']
+  end
+
   def render_contract
     s = render_to_string 'base.html.erb', 
                           :layout => false,
                           :locals => {:page => contract_page},
                           :formats => [:html]
-    c = @issue.contacts.first
 
     tmpl = Liquid::Template.parse(s)
-    tmpl.assigns['contact'] = ContactDrop.new c
+    tmpl.assigns['contractor'] = ContractorDrop.new contractor
+    tmpl.assigns['order'] = OrderDrop.new order
+    tmpl.assigns['product'] = ProductDrop.new product
     tmpl.assigns['institute'] = InstituteDrop.new institute
     tmpl.assigns['contract'] = ContractDrop.new contract_id, contract_page
     tmpl.render
