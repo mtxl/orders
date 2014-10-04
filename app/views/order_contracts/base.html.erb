@@ -1,6 +1,8 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <%= orders_stylesheet_link_tag("base_contract.css") %>
 <%= render "header" %>
+<div class="contract-body">
 <%= textilizable(page, :text, :headings => false) %>
+</div>
 <%= render "billing_information" %>
 <%= render :partial => "common/two_column_sign", :locals => {:page => page} %>

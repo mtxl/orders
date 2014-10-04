@@ -42,3 +42,29 @@ div.two-column tr.stamp {
 td.a-right {
   text-align:right
 }
+
+div.contract-body ol { 
+  counter-reset:section; 
+  list-style-type:none; 
+  padding-left: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+div.contract-body ol li { 
+  list-style-type:none; 
+  text-align: center;
+  font-weight: bold;
+}
+div.contract-body ol li ol { counter-reset:subsection; }
+div.contract-body ol li:before{
+    counter-increment:section;
+    content:counter(section) ". ";/*content:"Section " counter(section) ". ";*/
+}
+div.contract-body ol li ol li:before {
+    counter-increment:subsection;
+    content:counter(section) "." counter(subsection) ". ";
+}
+div.contract-body ol li ol li {
+  text-align: left;
+  font-weight: normal;
+}
