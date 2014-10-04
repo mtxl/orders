@@ -17,8 +17,8 @@ ru:
   label_bik: БИК
   label_phone: телефон
   label_email: эл.адрес
-  label_postal_address: почтовый адрес
-  label_legal_address: юридический адрес
+  label_postal_address: почт. адрес
+  label_legal_address: юр. адрес
   label_legal_postal_address: адрес
   label_short_year: г.
   button_create: Сформировать

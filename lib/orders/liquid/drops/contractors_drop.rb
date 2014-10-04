@@ -1,6 +1,6 @@
 class ContractorDrop < Liquid::Drop
 
-  CONTRACTOR_ATTR = %w(name full_name inn kpp email phone postal_address 
+  CONTRACTOR_ATTR = %w(name full_name inn kpp email phone legal_address postal_address 
                        bank boss representing_contract doc)
 
   def initialize(contractor)
