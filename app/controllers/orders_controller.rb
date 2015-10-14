@@ -39,8 +39,7 @@ class OrdersController < ApplicationController
       "project_id" => 16,  
       "subject" => item["product_info"]["title"],
       "tracker_id" => 4,
-      "author" => User.find_by_login("uri"),
-      "order_info" => item
+      "author" => User.find_by_login("uri")
       }
     options.merge!("custom_field_values" => custom_fields(item))
     @issue = Issue.new(options)
