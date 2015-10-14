@@ -57,7 +57,8 @@ class OrdersController < ApplicationController
       "23" => item["contractor"]["inn"],
       "20" => item["contractor"]["office_email"],
       "26" => item['contractor']['office_phone'],
-      "12" => item["contractor"]["postal_address"]
+      "12" => item["contractor"]["postal_address"],
+      "30" => item["id"]
     }
   end
 end
