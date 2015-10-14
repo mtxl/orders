@@ -12,4 +12,3 @@ Redmine::Plugin.register :orders do
   menu :project_menu, :orders, {:controller => 'orders', :action => 'get'}, :caption => :label_orders, :after => :activity,  :param => :project_id
 end
 
-require_dependency 'orders/orders'
