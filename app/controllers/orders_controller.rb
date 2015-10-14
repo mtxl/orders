@@ -25,6 +25,7 @@ class OrdersController < ApplicationController
     "issue[custom_field_values][13]" => item["user"]["contact_name"],
     "issue[custom_field_values][14]" => item["user"]["phone"],
     "issue[custom_field_values][6]"  => item["attendees"],
+    "issue[custom_field_values][30]" => item["id"],
     "issue[custom_field_values][11]" => item["contractor"]["full_name"],
     "issue[custom_field_values][22]" => item["contractor"]["name"],
     "issue[custom_field_values][23]" => item["contractor"]["inn"],
