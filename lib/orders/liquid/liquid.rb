@@ -1,5 +1,0 @@
-require 'orders/liquid/drops/institutes_drop'
-require 'orders/liquid/drops/contracts_drop'
-require 'orders/liquid/drops/contractors_drop'
-require 'orders/liquid/drops/orders_drop'
-require 'orders/liquid/drops/products_drop'
