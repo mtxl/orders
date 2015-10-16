@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
       if @issue.save
         return true
       else
-        flash[:error] = @issue.errors.empty? ? "Error" : @issues.errors.full_messages.to_sentence
+        flash[:error] = @issue.errors.empty? ? "Error" : @issue.errors.full_messages.to_sentence
         return false
       end
     else
