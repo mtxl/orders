@@ -6,3 +6,11 @@
   <label><%= l(:label_orders_api_path) %> </label>
   <%= text_field_tag 'settings[orders_api_path]', @settings['orders_api_path'] %>
 </p>
+<p>
+  <label><%= l(:label_order_email) %> </label>
+  <%= select_tag 'settings[order_email]', options_for_select(CustomField.all.map{|f| f.name}, @settings['order_email']) %>
+</p>
+<p>
+  <label><%= l(:label_unresolved_tracker) %> </label>
+  <%= select_tag 'settings[unresolved_tracker]', options_for_select(Tracker.all.map{|t| t.name}, @settings['unresolved_tracker']) %>
+</p>
