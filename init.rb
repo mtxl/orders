@@ -11,4 +11,5 @@ Redmine::Plugin.register :orders do
   permission :orders, {:orders => [:get]}, :public => true
   menu :project_menu, :orders, {:controller => 'orders', :action => 'get'}, :caption => :label_orders, :after => :activity,  :param => :project_id
 end
+require_dependency 'orders'
 

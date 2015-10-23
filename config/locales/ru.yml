@@ -23,6 +23,8 @@ ru:
   label_short_year: г.
   button_create: Сформировать
   button_import: Загрузить
+  label_order_email: Поле 'Email заявки'
+  label_unresolved_tracker: Трэкер 'Нераспределено'
 
 
 
