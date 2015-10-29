@@ -25,6 +25,8 @@ ru:
   button_import: Загрузить
   label_order_email: Поле 'Email заявки'
   label_unresolved_tracker: Трэкер 'Нераспределено'
+  label_attachments_bulk_download: Загрузить вложения
+  msg_no_attachments: В выбранных задчах нет вложений!
 
 
 
