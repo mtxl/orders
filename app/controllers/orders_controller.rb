@@ -39,7 +39,8 @@ class OrdersController < ApplicationController
       "project_id" => 16,  
       "subject" => item["product_info"]["title"],
       "tracker_id" => 4,
-      "author" => User.find_by_login("uri")
+      "author" => User.find_by_login("uri"),
+      "start_date" => item["created_at"].to_date
       }
     options.merge!("custom_field_values" => custom_fields(item))
     @issue = Issue.new(options)
@@ -57,7 +58,11 @@ class OrdersController < ApplicationController
       "20" => item["contractor"]["office_email"],
       "26" => item['contractor']['office_phone'],
       "12" => item["contractor"]["postal_address"],
-      "30" => item["id"]
+      "30" => item["id"],
+      "2"  => item["product_info"]["start_at"].to_date,
+      "7"  => item["price"].to_i * item["quantity"].to_i,
+      "28" => item["product_info"]["type"] == "вебинар" ? "Вебинар" : "Курс",
+      "31" => item["contractor_type"] == "person" ? "физ. лицо" : "юр. лицо"
     }
   end
 end
